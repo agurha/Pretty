@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Pretty</id>
+    <version>$version$</version>
+    <title>Pretty</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Pretty super charges your .NET development by helping you to manipulate strings, enums, dates, times, timespans, numbers and quantities as well as display them in human-readable format.</description>
+     
+  </metadata>
+  <files>
+    <file src="Pretty\bin\Release\**" target="lib\portable-win+net40+sl50+wp8" />
+    <file src="Pretty\**\*.cs" exclude="**\obj\**\*.*" target="src" />
+  </files>
+</package>

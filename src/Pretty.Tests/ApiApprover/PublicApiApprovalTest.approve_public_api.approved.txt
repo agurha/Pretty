@@ -1,0 +1,488 @@
+﻿public struct ByteSize
+{
+    public long BitsInByte;
+    public string BitSymbol;
+    public long BytesInGigabyte;
+    public long BytesInKilobyte;
+    public long BytesInMegabyte;
+    public long BytesInTerabyte;
+    public string ByteSymbol;
+    public string GigabyteSymbol;
+    public string KilobyteSymbol;
+    public Pretty.Bytes.ByteSize MaxValue;
+    public string MegabyteSymbol;
+    public Pretty.Bytes.ByteSize MinValue;
+    public string TerabyteSymbol;
+    public ByteSize(double byteSize) { }
+    public long Bits { get; set; }
+    public double Bytes { get; set; }
+    public double Gigabytes { get; set; }
+    public double Kilobytes { get; set; }
+    public string LargestWholeNumberSymbol { get; }
+    public double LargestWholeNumberValue { get; }
+    public double Megabytes { get; set; }
+    public double Terabytes { get; set; }
+    public Pretty.Bytes.ByteSize Add(Pretty.Bytes.ByteSize bs) { }
+    public Pretty.Bytes.ByteSize AddBits(long value) { }
+    public Pretty.Bytes.ByteSize AddBytes(double value) { }
+    public Pretty.Bytes.ByteSize AddGigabytes(double value) { }
+    public Pretty.Bytes.ByteSize AddKilobytes(double value) { }
+    public Pretty.Bytes.ByteSize AddMegabytes(double value) { }
+    public Pretty.Bytes.ByteSize AddTerabytes(double value) { }
+    public int CompareTo(object obj) { }
+    public int CompareTo(Pretty.Bytes.ByteSize other) { }
+    public bool Equals(object value) { }
+    public bool Equals(Pretty.Bytes.ByteSize value) { }
+    public Pretty.Bytes.ByteSize FromBits(long value) { }
+    public Pretty.Bytes.ByteSize FromBytes(double value) { }
+    public Pretty.Bytes.ByteSize FromGigabytes(double value) { }
+    public Pretty.Bytes.ByteSize FromKilobytes(double value) { }
+    public Pretty.Bytes.ByteSize FromMegabytes(double value) { }
+    public Pretty.Bytes.ByteSize FromTerabytes(double value) { }
+    public int GetHashCode() { }
+    public Pretty.Bytes.ByteSize Parse(string s) { }
+    public Pretty.Bytes.ByteSize Subtract(Pretty.Bytes.ByteSize bs) { }
+    public string ToString() { }
+    public string ToString(string format) { }
+    public bool TryParse(string s, Pretty.Bytes.ByteSize& result) { }
+}
+
+public class ByteSizeExtensions
+{
+    public Pretty.Bytes.ByteSize Bits(byte input) { }
+    public Pretty.Bytes.ByteSize Bits(sbyte input) { }
+    public Pretty.Bytes.ByteSize Bits(short input) { }
+    public Pretty.Bytes.ByteSize Bits(ushort input) { }
+    public Pretty.Bytes.ByteSize Bits(int input) { }
+    public Pretty.Bytes.ByteSize Bits(uint input) { }
+    public Pretty.Bytes.ByteSize Bits(long input) { }
+    public Pretty.Bytes.ByteSize Bytes(byte input) { }
+    public Pretty.Bytes.ByteSize Bytes(sbyte input) { }
+    public Pretty.Bytes.ByteSize Bytes(short input) { }
+    public Pretty.Bytes.ByteSize Bytes(ushort input) { }
+    public Pretty.Bytes.ByteSize Bytes(int input) { }
+    public Pretty.Bytes.ByteSize Bytes(uint input) { }
+    public Pretty.Bytes.ByteSize Bytes(double input) { }
+    public Pretty.Bytes.ByteSize Gigabytes(byte input) { }
+    public Pretty.Bytes.ByteSize Gigabytes(sbyte input) { }
+    public Pretty.Bytes.ByteSize Gigabytes(short input) { }
+    public Pretty.Bytes.ByteSize Gigabytes(ushort input) { }
+    public Pretty.Bytes.ByteSize Gigabytes(int input) { }
+    public Pretty.Bytes.ByteSize Gigabytes(uint input) { }
+    public Pretty.Bytes.ByteSize Gigabytes(double input) { }
+    public string Humanize(Pretty.Bytes.ByteSize input, string format) { }
+    public Pretty.Bytes.ByteSize Kilobytes(byte input) { }
+    public Pretty.Bytes.ByteSize Kilobytes(sbyte input) { }
+    public Pretty.Bytes.ByteSize Kilobytes(short input) { }
+    public Pretty.Bytes.ByteSize Kilobytes(ushort input) { }
+    public Pretty.Bytes.ByteSize Kilobytes(int input) { }
+    public Pretty.Bytes.ByteSize Kilobytes(uint input) { }
+    public Pretty.Bytes.ByteSize Kilobytes(double input) { }
+    public Pretty.Bytes.ByteSize Megabytes(byte input) { }
+    public Pretty.Bytes.ByteSize Megabytes(sbyte input) { }
+    public Pretty.Bytes.ByteSize Megabytes(short input) { }
+    public Pretty.Bytes.ByteSize Megabytes(ushort input) { }
+    public Pretty.Bytes.ByteSize Megabytes(int input) { }
+    public Pretty.Bytes.ByteSize Megabytes(uint input) { }
+    public Pretty.Bytes.ByteSize Megabytes(double input) { }
+    public Pretty.Bytes.ByteSize Terabytes(byte input) { }
+    public Pretty.Bytes.ByteSize Terabytes(sbyte input) { }
+    public Pretty.Bytes.ByteSize Terabytes(short input) { }
+    public Pretty.Bytes.ByteSize Terabytes(ushort input) { }
+    public Pretty.Bytes.ByteSize Terabytes(int input) { }
+    public Pretty.Bytes.ByteSize Terabytes(uint input) { }
+    public Pretty.Bytes.ByteSize Terabytes(double input) { }
+}
+
+public class CasingExtensions
+{
+    public string ApplyCase(string input, Pretty.LetterCasing casing) { }
+}
+
+public class CollectionHumanizeExtensions
+{
+    public string Humanize(System.Collections.Generic.IEnumerable<> collection) { }
+    public string Humanize(System.Collections.Generic.IEnumerable<> collection, System.Func<, > displayFormatter) { }
+    public string Humanize(System.Collections.Generic.IEnumerable<> collection, string separator) { }
+    public string Humanize(System.Collections.Generic.IEnumerable<> collection, System.Func<, > displayFormatter, string separator) { }
+}
+
+public class Configurator
+{
+    public Pretty.Configuration.LocaliserRegistry<Pretty.Localisation.CollectionFormatters.ICollectionFormatter> CollectionFormatters { get; }
+    public Pretty.DateTimePrettifyStrategy.IDateTimeHumanizeStrategy DateTimeHumanizeStrategy { get; set; }
+    public System.Func<System.Reflection.PropertyInfo, bool> EnumDescriptionPropertyLocator { get; set; }
+    public Pretty.Configuration.LocaliserRegistry<Pretty.Localisation.Formatters.IFormatter> Formatters { get; }
+    public Pretty.Configuration.LocaliserRegistry<Pretty.Localisation.NumberToWords.INumberToWordsConverter> NumberToWordsConverters { get; }
+    public Pretty.Configuration.LocaliserRegistry<Pretty.Localisation.Ordinalizers.IOrdinalizer> Ordinalizers { get; }
+}
+
+public class LocaliserRegistry`1
+{
+    public LocaliserRegistry`1(TLocaliser defaultLocaliser) { }
+    public LocaliserRegistry`1(System.Func<, > defaultLocaliser) { }
+    public void Register(string localeCode, TLocaliser localiser) { }
+    public void Register(string localeCode, System.Func<, > localiser) { }
+    public TLocaliser ResolveForCulture(System.Globalization.CultureInfo culture) { }
+    public TLocaliser ResolveForUiCulture() { }
+}
+
+public class DateHumanizeExtensions
+{
+    public string Humanize(System.DateTime input, bool utcDate, System.Nullable<System.DateTime> dateToCompareAgainst, System.Globalization.CultureInfo culture) { }
+}
+
+public class DefaultDateTimeHumanizeStrategy
+{
+    public DefaultDateTimeHumanizeStrategy() { }
+    public string Humanize(System.DateTime input, System.DateTime comparisonBase, System.Globalization.CultureInfo culture) { }
+}
+
+public interface IDateTimeHumanizeStrategy
+{
+    string Humanize(System.DateTime input, System.DateTime comparisonBase, System.Globalization.CultureInfo culture);
+}
+
+public class PrecisionDateTimeHumanizeStrategy
+{
+    public PrecisionDateTimeHumanizeStrategy(double precision) { }
+    public string Humanize(System.DateTime input, System.DateTime comparisonBase, System.Globalization.CultureInfo culture) { }
+}
+
+public class EnumHumanizeExtensions
+{
+    public string Humanize(System.Enum input) { }
+    public string Humanize(System.Enum input, Pretty.LetterCasing casing) { }
+}
+
+public enum GrammaticalCase
+{
+    Accusative,
+    Dative,
+    Genitive,
+    Instrumental,
+    Nominative,
+    Prepositional,
+    value__,
+}
+
+public enum GrammaticalGender
+{
+    Feminine,
+    Masculine,
+    Neuter,
+    value__,
+}
+
+public class In
+{
+    public In() { }
+    public System.DateTime April { get; }
+    public System.DateTime August { get; }
+    public System.DateTime December { get; }
+    public System.DateTime February { get; }
+    public System.DateTime January { get; }
+    public System.DateTime July { get; }
+    public System.DateTime June { get; }
+    public System.DateTime March { get; }
+    public System.DateTime May { get; }
+    public System.DateTime November { get; }
+    public System.DateTime October { get; }
+    public System.DateTime September { get; }
+    public System.DateTime AprilOf(int year) { }
+    public System.DateTime AugustOf(int year) { }
+    public System.DateTime DecemberOf(int year) { }
+    public System.DateTime FebruaryOf(int year) { }
+    public System.DateTime JanuaryOf(int year) { }
+    public System.DateTime JulyOf(int year) { }
+    public System.DateTime JuneOf(int year) { }
+    public System.DateTime MarchOf(int year) { }
+    public System.DateTime MayOf(int year) { }
+    public System.DateTime NovemberOf(int year) { }
+    public System.DateTime OctoberOf(int year) { }
+    public System.DateTime SeptemberOf(int year) { }
+    public System.DateTime TheYear(int year) { }
+}
+
+public class InflectorExtensions
+{
+    public string Camelize(string input) { }
+    public string Dasherize(string underscoredWord) { }
+    public string Hyphenate(string underscoredWord) { }
+    public string Pascalize(string input) { }
+    public string Pluralize(string word, Pretty.Plurality plurality) { }
+    public string Pluralize(string word, bool inputIsKnownToBeSingular) { }
+    public string Singularize(string word, Pretty.Plurality plurality) { }
+    public string Singularize(string word, bool inputIsKnownToBePlural) { }
+    public string Titleize(string input) { }
+    public string Underscore(string input) { }
+}
+
+public interface IStringTransformer
+{
+    string Transform(string input);
+}
+
+public interface ITruncator
+{
+    string Truncate(string value, int length, string truncationString, Pretty.TruncateFrom truncateFrom);
+}
+
+public enum LetterCasing
+{
+    AllCaps,
+    LowerCase,
+    Sentence,
+    Title,
+    value__,
+}
+
+public interface ICollectionFormatter
+{
+    string Humanize(System.Collections.Generic.IEnumerable<> collection);
+    string Humanize(System.Collections.Generic.IEnumerable<> collection, System.Func<, > objectFormatter);
+    string Humanize(System.Collections.Generic.IEnumerable<> collection, string separator);
+    string Humanize(System.Collections.Generic.IEnumerable<> collection, System.Func<, > objectFormatter, string separator);
+}
+
+public class DefaultFormatter
+{
+    public DefaultFormatter(string localeCode) { }
+    public string DateHumanize(Pretty.Localisation.TimeUnit timeUnit, Pretty.Localisation.Tense timeUnitTense, int unit) { }
+    public string DateHumanize_Now() { }
+    public string TimeSpanHumanize(Pretty.Localisation.TimeUnit timeUnit, int unit) { }
+    public string TimeSpanHumanize_Zero() { }
+}
+
+public interface IFormatter
+{
+    string DateHumanize(Pretty.Localisation.TimeUnit timeUnit, Pretty.Localisation.Tense timeUnitTense, int unit);
+    string DateHumanize_Now();
+    string TimeSpanHumanize(Pretty.Localisation.TimeUnit timeUnit, int unit);
+    string TimeSpanHumanize_Zero();
+}
+
+public interface INumberToWordsConverter
+{
+    string Convert(int number);
+    string Convert(int number, Pretty.GrammaticalGender gender);
+    string ConvertToOrdinal(int number);
+    string ConvertToOrdinal(int number, Pretty.GrammaticalGender gender);
+}
+
+public interface IOrdinalizer
+{
+    string Convert(int number, string numberString);
+    string Convert(int number, string numberString, Pretty.GrammaticalGender gender);
+}
+
+public class ResourceKeys
+{
+    public ResourceKeys() { }
+}
+
+public class Resources
+{
+    public string GetResource(string resourceKey, System.Globalization.CultureInfo culture) { }
+}
+
+public enum Tense
+{
+    Future,
+    Past,
+    value__,
+}
+
+public enum TimeUnit
+{
+    Day,
+    Hour,
+    Millisecond,
+    Minute,
+    Month,
+    Second,
+    value__,
+    Week,
+    Year,
+}
+
+public class NoMatchFoundException
+{
+    public NoMatchFoundException() { }
+    public NoMatchFoundException(string message) { }
+    public NoMatchFoundException(string message, System.Exception inner) { }
+}
+
+public class NumberToTimeSpanExtensions
+{
+    public System.TimeSpan Days(byte days) { }
+    public System.TimeSpan Days(sbyte days) { }
+    public System.TimeSpan Days(short days) { }
+    public System.TimeSpan Days(ushort days) { }
+    public System.TimeSpan Days(int days) { }
+    public System.TimeSpan Days(uint days) { }
+    public System.TimeSpan Days(long days) { }
+    public System.TimeSpan Days(ulong days) { }
+    public System.TimeSpan Days(double days) { }
+    public System.TimeSpan Hours(byte hours) { }
+    public System.TimeSpan Hours(sbyte hours) { }
+    public System.TimeSpan Hours(short hours) { }
+    public System.TimeSpan Hours(ushort hours) { }
+    public System.TimeSpan Hours(int hours) { }
+    public System.TimeSpan Hours(uint hours) { }
+    public System.TimeSpan Hours(long hours) { }
+    public System.TimeSpan Hours(ulong hours) { }
+    public System.TimeSpan Hours(double hours) { }
+    public System.TimeSpan Milliseconds(byte ms) { }
+    public System.TimeSpan Milliseconds(sbyte ms) { }
+    public System.TimeSpan Milliseconds(short ms) { }
+    public System.TimeSpan Milliseconds(ushort ms) { }
+    public System.TimeSpan Milliseconds(int ms) { }
+    public System.TimeSpan Milliseconds(uint ms) { }
+    public System.TimeSpan Milliseconds(long ms) { }
+    public System.TimeSpan Milliseconds(ulong ms) { }
+    public System.TimeSpan Milliseconds(double ms) { }
+    public System.TimeSpan Minutes(byte minutes) { }
+    public System.TimeSpan Minutes(sbyte minutes) { }
+    public System.TimeSpan Minutes(short minutes) { }
+    public System.TimeSpan Minutes(ushort minutes) { }
+    public System.TimeSpan Minutes(int minutes) { }
+    public System.TimeSpan Minutes(uint minutes) { }
+    public System.TimeSpan Minutes(long minutes) { }
+    public System.TimeSpan Minutes(ulong minutes) { }
+    public System.TimeSpan Minutes(double minutes) { }
+    public System.TimeSpan Seconds(byte seconds) { }
+    public System.TimeSpan Seconds(sbyte seconds) { }
+    public System.TimeSpan Seconds(short seconds) { }
+    public System.TimeSpan Seconds(ushort seconds) { }
+    public System.TimeSpan Seconds(int seconds) { }
+    public System.TimeSpan Seconds(uint seconds) { }
+    public System.TimeSpan Seconds(long seconds) { }
+    public System.TimeSpan Seconds(ulong seconds) { }
+    public System.TimeSpan Seconds(double seconds) { }
+    public System.TimeSpan Weeks(byte input) { }
+    public System.TimeSpan Weeks(sbyte input) { }
+    public System.TimeSpan Weeks(short input) { }
+    public System.TimeSpan Weeks(ushort input) { }
+    public System.TimeSpan Weeks(int input) { }
+    public System.TimeSpan Weeks(uint input) { }
+    public System.TimeSpan Weeks(long input) { }
+    public System.TimeSpan Weeks(ulong input) { }
+    public System.TimeSpan Weeks(double input) { }
+}
+
+public class NumberToWordsExtension
+{
+    public string ToOrdinalWords(int number, System.Globalization.CultureInfo culture) { }
+    public string ToOrdinalWords(int number, Pretty.GrammaticalGender gender, System.Globalization.CultureInfo culture) { }
+    public string ToWords(int number, System.Globalization.CultureInfo culture) { }
+    public string ToWords(int number, Pretty.GrammaticalGender gender, System.Globalization.CultureInfo culture) { }
+}
+
+public class On
+{
+    public On() { }
+}
+
+public enum OnNoMatch
+{
+    ReturnsNull,
+    ThrowsException,
+    value__,
+}
+
+public class OrdinalizeExtensions
+{
+    public string Ordinalize(string numberString) { }
+    public string Ordinalize(string numberString, Pretty.GrammaticalGender gender) { }
+    public string Ordinalize(int number) { }
+    public string Ordinalize(int number, Pretty.GrammaticalGender gender) { }
+}
+
+public enum Plurality
+{
+    CouldBeEither,
+    Plural,
+    Singular,
+    value__,
+}
+
+public class PrepositionsExtensions
+{
+    public System.DateTime At(System.DateTime date, int hour, int min, int second, int millisecond) { }
+    public System.DateTime AtMidnight(System.DateTime date) { }
+    public System.DateTime AtNoon(System.DateTime date) { }
+    public System.DateTime In(System.DateTime date, int year) { }
+}
+
+public class RomanNumeralExtensions
+{
+    public int FromRoman(string input) { }
+    public string ToRoman(int input) { }
+}
+
+public enum ShowQuantityAs
+{
+    None,
+    Numeric,
+    value__,
+    Words,
+}
+
+public class StringDehumanizeExtensions
+{
+    public string Dehumanize(string input) { }
+}
+
+public class StringExentions
+{
+    public string FormatWith(string format, object[] args) { }
+}
+
+public class StringHumanizeExtensions
+{
+    public string Humanize(string input) { }
+    public string Humanize(string input, Pretty.LetterCasing casing) { }
+}
+
+public class TimeSpanHumanizeExtensions
+{
+    public string Humanize(System.TimeSpan timeSpan, int precision, System.Globalization.CultureInfo culture) { }
+}
+
+public class To
+{
+    public Pretty.IStringTransformer LowerCase { get; }
+    public Pretty.IStringTransformer SentenceCase { get; }
+    public Pretty.IStringTransformer TitleCase { get; }
+    public Pretty.IStringTransformer UpperCase { get; }
+    public string Transform(string input, Pretty.IStringTransformer[] transformers) { }
+}
+
+public class ToQuantityExtensions
+{
+    public string ToQuantity(string input, int quantity, Pretty.ShowQuantityAs showQuantityAs) { }
+    public string ToQuantity(string input, int quantity, string format, System.IFormatProvider formatProvider) { }
+}
+
+public class TruncateExtensions
+{
+    public string Truncate(string input, int length) { }
+    public string Truncate(string input, int length, Pretty.ITruncator truncator, Pretty.TruncateFrom from) { }
+    public string Truncate(string input, int length, string truncationString, Pretty.TruncateFrom from) { }
+    public string Truncate(string input, int length, string truncationString, Pretty.ITruncator truncator, Pretty.TruncateFrom from) { }
+}
+
+public enum TruncateFrom
+{
+    Left,
+    Right,
+    value__,
+}
+
+public class Truncator
+{
+    public Pretty.ITruncator FixedLength { get; }
+    public Pretty.ITruncator FixedNumberOfCharacters { get; }
+    public Pretty.ITruncator FixedNumberOfWords { get; }
+}
